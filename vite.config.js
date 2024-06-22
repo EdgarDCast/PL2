@@ -7,8 +7,6 @@ import handlebars from "vite-plugin-handlebars";
 
 
 export default defineConfig({
-	base: "/PL2/",
-	appType: "mpa",
 	build: {
 		rollupOptions: {
 			input: Object.fromEntries([
@@ -28,10 +26,8 @@ export default defineConfig({
 		},
 	},
 	plugins: [
-		handlebars({
-			partialDirectory: resolve(__dirname, "partials"),
-		}),
 		htmlPurge({}),
 		ViteMinifyPlugin({}),
 	],
+	base: "/PL2/"
 });
